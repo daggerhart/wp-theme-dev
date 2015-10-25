@@ -8,17 +8,22 @@ This theme will always be a work in progress, as it is where I will place future
 
 ##### Todo
 
-* Custom WP_Query
 * Core Theme supports
     * `custom-background` Background color
     * `custom-header` Header image
-* Customizer theme settings
-    * -- `content_width` - Dynamic content width (oembeds, etc) 
-    * -- `excerpt_length` - Excerpt length
-    * -- `excerpt_more` - Excerpt more
-    * -- `fluid|fixed` Bootstrap container
 * Accessibility
 * Internationalization
+
+##### Features
+
+* Customizer theme settings
+    * Content Width: `content_width` - Dynamic content width (oembeds, etc) 
+    * Excerpt Length: `excerpt_length` - How many words should appear in excerpts
+    * Excerpt More: `excerpt_more` - Modify the html appended to excerpts.
+    * Bootstrap Container: Fluid or fixed width content.
+    * Bootstrap Navbar: Default or inverse navbar style.
+* Page Templates
+    * Custom WP_Query using post_meta to pull posts in the  given category slug.
     
 
 ### Folder Structure 
@@ -66,6 +71,7 @@ In WordPress the "Page" post_type is special. Each Page can choose its own templ
 File | Description
 ---|---
 `page-templates/page-no-sidebars.php` | Like `page.php`, but this template has no sidebar. Used as an example for creating admin-selectable templates for Pages.
+`page-templates/page-list-category.php` | Like `page.php`, but this template performs an additional custom query if the page being viewed has "page_category_slug" post meta.
 
 
 ### Content Template Files
