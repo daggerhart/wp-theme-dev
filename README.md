@@ -24,4 +24,5 @@ The wiki for this repo is setup to be a tutorial for creating your own themes fr
 * Page: Sassify
 * Page: Git repo
 * Page: Moving to Awesomesauce
+* Page: 3rd Party Assets - Google Fonts & FontAwesome
 * Screenshots
