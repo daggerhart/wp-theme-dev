@@ -5,6 +5,7 @@
     * **css** - Location for 3rd-Party CSS used by this theme.
     * **sass** - Location for all SCSS files used by this theme.
 * **includes** - WordPress hooks and other PHP functions and classes used by this theme.
+    * **vendor** - Location for 3rd party PHP libraries.
 * **page-templates** - Location of templates that may be used by the Page post type.
 * **partials** - Templates that represent the interior content of a page/post.
 
@@ -35,6 +36,15 @@ File | Description
 
 More more information of additional template files, review the [Template Hierarchy](https://developer.wordpress.org/themes/basics/template-hierarchy/).
 
+### Page Templates Files
+
+In WordPress the "Page" post_type is special. Each Page can choose its own template explicitly. You can place custom page templates in the `page-templates` folder.
+
+File | Description
+---|---
+`page-templates/page-no-sidebars.php` | Like `page.php`, but this template has no sidebar. Used as an example for creating admin-selectable templates for Pages.
+
+
 ### Content Template Files
 
 These templates are used to output the actual content.
@@ -42,10 +52,24 @@ These templates are used to output the actual content.
 File | Description
 ---|---
 `partials/content.php` | Default content template used when a more appropriate one can't be found.
-`partials/content-no-results.php` | Template used when no posts are found in a loop.
-`partials/content-page.php` | Template used to display the content of a single Page. 
-`partials/content-post.php` | Template used to display the content of a single Post.
+`partials/content-no-results.php` | Template used when no posts are found for the page.
+`partials/content-page.php` | Template used to display the content of a Page. 
+`partials/content-post.php` | Template used to display the content of a Post.
 `partials/content-search.php` | Template used to display a single search result in a list of search results.
+`partials/entry-meta.php` | Template for post date, time, and author info
+`partials/entry-footer.php` | Template for common footer data.
+
+
+### Content Template Patterns
+
+These patterns can be used to create more-specific templates.
+
+File | Description
+---|---
+`partials/content-{post_type}.php` | Like `content.php`, but this template handles content for a custom post_type. Example: `partials/content-gallery_item.php`
+`partials/content-post-{post_format}.php` | Like `content-post.php`, but this template is for a specific post_format. Example: `partials/content-post-video.php`
+`partials/entry-footer-{post_type}.php` | Like `entry-footer.php`, but this template is for a specific post_type. Example: `partials/entry-footer-gallery_item.php`
+`partials/entry-meta-{post_type}.php` | Like `entry-meta.php`, but this template is for a specific post_type. Example: `entry-meta-gallery_item.php`
 
 
 ### Other Files
@@ -56,7 +80,6 @@ File | Description
 `includes/assets.php` | Hooks related to assets and serving them.
 `includes/config.php` | Hooks this theme uses to initialize itself.
 `includes/sidebars.php` | Hooks that register and alter theme sidebars and widgets.
-`includes/template-tags.php` | Custom functions that produce re-usable output.
 `includes/utilities.php` | Custom functions used by the theme.
 
 
