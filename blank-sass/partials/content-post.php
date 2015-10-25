@@ -23,41 +23,6 @@
 				'after'  => '</div>',
 			) );
 		?>
-
-		<h2>Other useful <a target="_blank" href="https://codex.wordpress.org/Template_Tags">Template Tags</a>.</h2>
-
-		<dl>
-			<dt>Post Featured Image at Medium size:</dt>
-			<dd><?php the_post_thumbnail('medium'); ?></dd>
-
-			<dt>Post Excerpt (summary):</dt>
-			<dd><?php the_excerpt(); ?></dd>
-
-			<dt>Author:</dt>
-			<dd><?php the_author(); ?></dd>
-
-			<dt>Author Avatar:</dt>
-			<dd><?php echo get_avatar( get_the_author_meta( 'ID' ) ); ?></dd>
-
-			<dt>Date: </dt>
-			<dd><?php the_date(); ?></dd>
-
-			<dt>Time Ago:</dt>
-			<dd><?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?></dd>
-
-			<dt>Permalink (URL):</dt>
-			<dd><?php the_permalink(); ?></dd>
-
-			<dt>Post Categories:</dt>
-			<dd><?php the_category(); ?></dd>
-
-			<dt>Post Tags: </dt>
-			<dd><?php the_tags(); ?></dd>
-
-			<dt>Post ID:</dt>
-			<dd><?php the_ID(); // or alternatively get_the_ID(); ?></dd>
-		</dl>
-
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
