@@ -26,11 +26,6 @@ function awesomesauce_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary Menu', 'awesomesauce' ),
-	) );
-
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -55,11 +50,11 @@ function awesomesauce_setup() {
 		'link',
 	) );
 
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'awesomesauce_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
+	// This theme uses wp_nav_menu() in one location.
+	register_nav_menus( array(
+		'primary' => esc_html__( 'Primary Menu', 'awesomesauce' ),
+	) );
+
 }
 add_action( 'after_setup_theme', 'awesomesauce_setup' );
 

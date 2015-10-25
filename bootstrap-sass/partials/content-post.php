@@ -5,8 +5,8 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  */
 
-$categories_list = get_the_category_list( esc_html__( ', ', 'awesomesauce' ) );
-$tags_list = get_the_tag_list( '', esc_html__( ', ', 'awesomesauce' ) );
+$categories_list = get_the_category_list( ', ' );
+$tags_list = get_the_tag_list( '', ', ' );
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
