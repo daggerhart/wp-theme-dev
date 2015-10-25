@@ -15,7 +15,7 @@ $tags_list = get_the_tag_list( '', ', ' );
 	/*
 	 * Viewing this content on its own
 	 */
-	if ( is_singular() ) : ?>
+	if ( is_single( get_the_ID() ) ) : ?>
 		<header class="entry-header page-header">
 			<h1 class="entry-title"><?php the_title(); ?></h1>
 
