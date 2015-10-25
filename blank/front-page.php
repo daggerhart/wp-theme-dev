@@ -17,11 +17,18 @@ get_header(); ?>
 
 				<?php
 					/*
-					 * Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-post-___.php (where ___ is the Post Format name) and that will be used instead.
+					 * Front page needs to be able to handle almost any content.
+					 * Load the appropriate template.
 					 */
-					get_template_part( 'partials/content-post', get_post_format() );
+					if ( 'page' == get_post_type() ) {
+						get_template_part( 'partials/content', 'page' );
+					}
+					else if ( 'post' == get_post_type() ) {
+						get_template_part( 'partials/content-post', get_post_format() );
+					}
+					else {
+						get_template_part( 'partials/content', get_post_type() );
+					}
 				?>
 
 			<?php endwhile; ?>
