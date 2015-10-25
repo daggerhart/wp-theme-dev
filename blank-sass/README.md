@@ -6,7 +6,7 @@
     * **sass** - Location for all SCSS files used by this theme.
 * **includes** - WordPress hooks and other PHP functions and classes used by this theme.
 * **page-templates** - Location of templates that may be used by the Page post type.
-* **template-parts** - Templates that represent the interior content of a page/post.
+* **partials** - Templates that represent the interior content of a page/post.
 
 ### Theme Files
 
@@ -41,11 +41,11 @@ These templates are used to output the actual content.
 
 File | Description
 ---|---
-`template-parts/content.php` | Default content template used when a more appropriate one can't be found.
-`template-parts/content-no-results.php` | Template used when no posts are found in a loop.
-`template-parts/content-page.php` | Template used to display the content of a single Page. 
-`template-parts/content-post.php` | Template used to display the content of a single Post.
-`template-parts/content-search.php` | Template used to display a single search result in a list of search results.
+`partials/content.php` | Default content template used when a more appropriate one can't be found.
+`partials/content-no-results.php` | Template used when no posts are found in a loop.
+`partials/content-page.php` | Template used to display the content of a single Page. 
+`partials/content-post.php` | Template used to display the content of a single Post.
+`partials/content-search.php` | Template used to display a single search result in a list of search results.
 
 
 ### Other Files
