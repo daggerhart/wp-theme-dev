@@ -7,26 +7,48 @@
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+	<?php
+	/*
+	 * Viewing this content on its own
+	 */
+	if ( is_singular() ) : ?>
+		<header class="entry-header">
+			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
-		<div class="entry-meta">
-			<?php awesomesauce_posted_on(); ?>
-		</div><!-- .entry-meta -->
-	</header><!-- .entry-header -->
+			<div class="entry-meta">
+				<?php awesomesauce_posted_on(); ?>
+			</div><!-- .entry-meta -->
+		</header><!-- .entry-header -->
 
-	<div class="entry-content">
-		<?php the_content(); ?>
-		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'awesomesauce' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
+		<div class="entry-content">
+			<?php the_content(); ?>
+			<?php
+				wp_link_pages( array(
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'awesomesauce' ),
+					'after'  => '</div>',
+				) );
+			?>
+		</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php awesomesauce_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+		<footer class="entry-footer">
+			<?php awesomesauce_entry_footer(); ?>
+		</footer><!-- .entry-footer -->
+	<?php
+	/*
+	 * Viewing this content as part of a list
+	 */
+	else: ?>
+		<header class="entry-header">
+			<h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+
+			<div class="entry-meta">
+				<?php awesomesauce_posted_on(); ?>
+			</div><!-- .entry-meta -->
+		</header><!-- .entry-header -->
+
+		<div class="entry-content">
+			<?php the_excerpt(); ?>
+		</div><!-- .entry-content -->
+	<?php endif; ?>
 </article><!-- #post-## -->
 
