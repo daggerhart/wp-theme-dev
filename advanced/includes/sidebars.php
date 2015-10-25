@@ -17,3 +17,8 @@ function awesomesauce_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'awesomesauce_widgets_init' );
+
+/**
+ * Execute shortcodes within text widgets
+ */
+//add_filter('widget_text', 'do_shortcode');
