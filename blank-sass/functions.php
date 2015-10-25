@@ -23,11 +23,6 @@ require get_template_directory() . '/includes/assets.php';
 require get_template_directory() . '/includes/sidebars.php';
 
 /**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/includes/template-tags.php';
-
-/**
  * Utility functions that help the template files
  */
 require get_template_directory() . '/includes/utilities.php';
