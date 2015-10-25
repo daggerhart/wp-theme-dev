@@ -1,3 +1,7 @@
+# Bootstrap with SASS
+
+Basic theme built from Blank that incorporates Bootstrap CSS using SASS.
+
 ### Folder Structure 
 
 * **assets** - CSS and javascript files

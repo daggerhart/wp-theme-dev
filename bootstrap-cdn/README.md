@@ -1,3 +1,7 @@
+# Bootstrap from CDN
+
+Simple theme created from Blank with Bootstrap loaded from CDN.
+
 ### Folder Structure 
 
 * **assets** - CSS and javascript files

@@ -1,3 +1,7 @@
+# Blank with SASS
+
+Simple theme created from Blank that uses SASS
+
 ### Folder Structure 
 
 * **assets** - CSS and javascript files

@@ -1,3 +1,7 @@
+# Blank
+
+Simple WordPress theme created from _s and highly modified for simplicity.
+
 ### Folder Structure 
 
 * **assets** - CSS and javascript files
