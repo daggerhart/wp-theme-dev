@@ -47,7 +47,7 @@ get_header(); ?>
 						// create a new custom query
 						$custom_query = new WP_Query( array(
 							'tax_query' => array(
-								array(
+								'post_category_slug' => array(
 									'taxonomy' => 'category',
 									'field'    => 'slug',
 									'terms'    => $term_slug,
