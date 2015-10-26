@@ -8,13 +8,12 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
 	<header class="entry-header page-header">
+		<?php get_template_part( 'partials/entry-thumbnail-fancy' ); ?>
+
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 	</header><!-- .entry-header -->
-
-	<?php if ( has_post_thumbnail() ): ?>
-		<?php the_post_thumbnail( 'medium', array( 'class' => 'img-responsive' ) ); ?>
-	<?php endif; ?>
 
 	<div class="entry-content">
 		<?php the_content(); ?>
