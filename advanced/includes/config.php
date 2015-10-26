@@ -50,7 +50,14 @@ function awesomesauce_setup() {
 		'link',
 	) );
 
-	// This theme uses wp_nav_menu() in one location.
+	/*
+	 * Add a "fancy-large" image size for large background images
+	 */
+	add_image_size( 'fancy-large', 900, 300, array( 'center', 'top' ) );
+
+	/*
+	 * This theme uses wp_nav_menu() in one location.
+	 */
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary Menu', 'awesomesauce' ),
 	) );

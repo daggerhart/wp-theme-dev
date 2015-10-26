@@ -18,12 +18,7 @@
 
 	<div class="entry-content">
 		<?php the_content(); ?>
-		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'awesomesauce' ),
-				'after'  => '</div>',
-			) );
-		?>
+		<?php get_template_part( 'partials/entry-pager', get_post_type() ); ?>
 	</div><!-- .entry-content -->
 </article><!-- #post-## -->
 

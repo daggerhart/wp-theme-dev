@@ -5,9 +5,6 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  */
 
-$categories_list = get_the_category_list( ', ' );
-$tags_list = get_the_tag_list( '', ', ' );
-
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
@@ -17,40 +14,23 @@ $tags_list = get_the_tag_list( '', ', ' );
 	 */
 	if ( is_single( get_the_ID() ) ) : ?>
 		<header class="entry-header page-header">
+
+			<?php get_template_part( 'partials/entry-thumbnail-fancy' ); ?>
+
 			<h1 class="entry-title"><?php the_title(); ?></h1>
 
 			<div class="entry-meta">
-				<?php get_template_part( 'partials/entry-meta', get_post_type() ); ?>
+				<?php get_template_part( 'partials/entry-taxonomy', get_post_type() ); ?>
 			</div><!-- .entry-meta -->
 		</header><!-- .entry-header -->
 
-		<?php if ( has_post_thumbnail() ): ?>
-			<?php the_post_thumbnail( 'medium', array( 'class' => 'img-responsive' ) ); ?>
-		<?php endif; ?>
-
-		<div class="entry-content">
+		<div class="entry-content clearfix">
 			<?php the_content(); ?>
-			<?php
-				wp_link_pages( array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'awesomesauce' ),
-					'after'  => '</div>',
-				) );
-			?>
+			<?php get_template_part( 'partials/entry-pager', get_post_type() ); ?>
 		</div><!-- .entry-content -->
 
 		<footer class="entry-footer">
-			<?php if ( $categories_list && awesomesauce_categorized_blog() ) : ?>
-				<span class="cat-links">
-					Posted in <?php echo $categories_list ?>
-				</span>
-			<?php endif; ?>
-
-			<?php if ( $tags_list ) : ?>
-				<span class="tags-links">
-					Tagged <?php echo $tags_list?>
-				</span>
-			<?php endif; ?>
-
+			<?php get_template_part( 'partials/entry-author', get_post_type() ); ?>
 			<?php get_template_part( 'partials/entry-footer', get_post_type() ); ?>
 		</footer><!-- .entry-footer -->
 	<?php

@@ -6,16 +6,11 @@ A theme that uses more advanced features and code for WordPress.
 
 This theme will always be a work in progress, as it is where I will place future examples.
 
-##### Todo
-
-* Core Theme supports
-    * `custom-background` Background color
-    * `custom-header` Header image
-* Accessibility
-* Internationalization
-
 ##### Features
 
+* Bootstrap
+* SASS
+* Granular templates
 * Customizer theme settings
     * Content Width: `content_width` - Dynamic content width (oembeds, etc) 
     * Excerpt Length: `excerpt_length` - How many words should appear in excerpts
@@ -23,7 +18,7 @@ This theme will always be a work in progress, as it is where I will place future
     * Bootstrap Container: Fluid or fixed width content.
     * Bootstrap Navbar: Default or inverse navbar style.
 * Page Templates
-    * Custom WP_Query using post_meta to pull posts in the  given category slug.
+    * `page-list-category.php` - Custom WP_Query using "post_category_slug" post_meta to pull posts in the given category slug.
     
 
 ### Folder Structure 
@@ -85,8 +80,13 @@ File | Description
 `partials/content-page.php` | Template used to display the content of a Page. 
 `partials/content-post.php` | Template used to display the content of a Post.
 `partials/content-search.php` | Template used to display a single search result in a list of search results.
-`partials/entry-meta.php` | Template for post date, time, and author info
+`partials/entry-author.php` | Template to display "About the Author" information.
 `partials/entry-footer.php` | Template for common footer data.
+`partials/entry-meta.php` | Template for post date, time, and author info
+`partials/entry-navigation.php` | Template for post navigation (Next Post, Previous Post).
+`partials/entry-pager.php` | Template for single post pager. Posts can be broken into pages by using the `<!--nextpage-->` tag in the content body.
+`partials/entry-taxonomy.php` | Template used to display Categories and Tags related to the current post. 
+`partials/entry-thumbnail-fancy.php` | Template for showing a large version of the Featured Image on a post.
 
 
 ### Content Template Patterns
@@ -119,3 +119,11 @@ File | Description
 ```
 sass -scss --watch style.scss:style.css
 ```
+
+##### Todo
+
+* Core Theme supports
+    * `custom-background` Background color
+    * `custom-header` Header image
+* Accessibility
+* Internationalization

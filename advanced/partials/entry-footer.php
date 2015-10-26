@@ -1,8 +1,11 @@
 <?php
 /**
- * Prints HTML with meta information for the categories, tags and comments.
+ * Prints HTML with meta information about a post
  */
 
+/*
+ * Comment in popup link
+ */
 if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) )
 {
 	?>

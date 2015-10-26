@@ -1,10 +1,23 @@
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
+html,body { background: $html-bg; }
 table {
 	@extend .table;
 }
-
+/*--------------------------------------------------------------
+## Layout
+--------------------------------------------------------------*/
+.navbar {
+	margin-bottom: 0;
+}
+.site-content {
+	padding: 0 40px;
+	background: $body-bg;
+}
+#secondary {
+	padding-top: 15px;
+}
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
@@ -17,7 +30,7 @@ table {
 }
 
 .byline,
-.updated:not(.published){
+.updated:not(.published) {
 	display: none;
 }
 
@@ -37,6 +50,47 @@ table {
 	margin: 0 0 1.5em;
 }
 
+.cat-links, .tag-links {
+	display: inline-block;
+	font-size: 18px;
+	font-weight: normal;
+	line-height: 28px;
+}
+.inline-category,
+.inline-tag {
+	@extend .label;
+
+	a {
+		color: #fff;
+	}
+}
+.inline-category { @extend .label-primary; }
+.inline-tag { @extend .label-warning; }
+
+nav.entry-pager {
+	text-align: center;
+
+	li > span {
+		color: $gray;
+
+		// .pagination .active
+		z-index: 2;
+		color: $body-bg;
+		cursor: default;
+		background-color: $brand-primary;
+		border-color: $brand-primary;
+	}
+}
+.about-the-author {
+	border-top: 1px solid $gray-lighter;
+	border-bottom: 1px solid $gray-lighter;
+	margin: 30px 0;
+	padding: 0 0 30px;
+
+	.author-title {
+		margin-bottom: 30px;
+	}
+}
 /*--------------------------------------------------------------
 ## Asides
 --------------------------------------------------------------*/
@@ -51,6 +105,7 @@ table {
 .comment-content a {
 	word-wrap: break-word;
 }
+
 .bypostauthor {
 	display: block;
 }

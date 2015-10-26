@@ -27,15 +27,11 @@
 
 		<div class="entry-content">
 			<?php the_content(); ?>
-			<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'awesomesauce' ),
-				'after'  => '</div>',
-			) );
-			?>
+			<?php get_template_part( 'partials/entry-pager', get_post_type() ); ?>
 		</div><!-- .entry-content -->
 
 		<footer class="entry-footer">
+			<?php get_template_part( 'partials/entry-author', get_post_type() ); ?>
 			<?php get_template_part( 'partials/entry-footer', get_post_type() ); ?>
 		</footer><!-- .entry-footer -->
 	<?php

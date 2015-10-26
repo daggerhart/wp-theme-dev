@@ -13,6 +13,25 @@ iframe,
 object {
 	max-width: 100%;
 }
+
+.fancy-large-wrapper {
+	background-position: top center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border: 1px solid #bbb;
+}
+.fancy-large-overlay {
+	height: 280px;
+	max-height: 280px;
+	overflow: hidden;
+
+	$overlay_from: rgba( 255, 255, 255, 0 );
+	$overlay_to: rgba( 230, 230, 230, 0.2 );
+	background: -webkit-gradient(radial, center center, 0, center center, 460, from($overlay_from), to($overlay_to));
+	background: -webkit-radial-gradient(circle, $overlay_from, $overlay_to);
+	background: -moz-radial-gradient(circle, $overlay_from, $overlay_to);
+	background: -ms-radial-gradient(circle, $overlay_from, $overlay_to);
+}
 /*--------------------------------------------------------------
 # Alignments
 --------------------------------------------------------------*/

@@ -22,7 +22,7 @@ get_header(); ?>
 				get_template_part( 'partials/content-post', get_post_format() );
 			?>
 
-			<?php the_post_navigation(); ?>
+			<?php get_template_part( 'partials/entry-navigation' ); ?>
 
 			<?php
 				// If comments are open or we have at least one comment, load up the comment template.
