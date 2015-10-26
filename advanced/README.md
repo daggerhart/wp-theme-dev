@@ -17,6 +17,7 @@ This theme will always be a work in progress, as it is where I will place future
     * Excerpt More: `excerpt_more` - Modify the html appended to excerpts.
     * Bootstrap Container: Fluid or fixed width content.
     * Bootstrap Navbar: Default or inverse navbar style.
+    * Google Fonts: Separate choices for headings and content.
 * Page Templates
     * `page-list-category.php` - Custom WP_Query using "post_category_slug" post_meta to pull posts in the given category slug.
     
