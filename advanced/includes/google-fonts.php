@@ -69,6 +69,17 @@ function awesomesauce_google_fonts_customize_register( $wp_customize ) {
 add_action( 'customize_register', 'awesomesauce_google_fonts_customize_register' );
 
 /**
+ * Enqueue scripts and styles.
+ */
+function awesomesauce_google_fonts_scripts() {
+	// google fonts
+	if ( get_theme_mod( 'google_fonts_headings', false ) || get_theme_mod( 'google_fonts_headings', false ) ) {
+		wp_enqueue_style( 'awesomesauce-google-fonts', _awesomesauce_google_fonts_url() );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'awesomesauce_google_fonts_scripts' );
+
+/**
  * Inject the font family styles into the HTML head
  */
 function awesomesauce_google_fonts_wp_head(){
