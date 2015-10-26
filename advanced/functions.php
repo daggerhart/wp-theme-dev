@@ -23,6 +23,11 @@ require get_template_directory() . '/includes/customizer.php';
 require get_template_directory() . '/includes/assets.php';
 
 /**
+ * Google Fonts as settings in the Customizer
+ */
+require get_template_directory() . '/includes/google-fonts.php';
+
+/**
  * Sidebar and widget related hooks
  */
 require get_template_directory() . '/includes/sidebars.php';

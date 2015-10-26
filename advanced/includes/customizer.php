@@ -118,43 +118,5 @@ function awesomesauce_customize_register( $wp_customize ) {
 			'section'     => 'theme_settings',
 			'type'        => 'checkbox',
 		) );
-
-	/*
-	 * Google Fonts
-	 */
-	$font_choices = array( 0 => '- Disabled -' );
-	foreach ( awesomesauce_google_fonts_options() as $option ){
-		$font_choices[ $option ] = urldecode( $option );
-	}
-
-	// headings
-	$wp_customize->add_setting( 'google_fonts_headings',
-		array(
-			'default' => 0,
-		) );
-
-	$wp_customize->add_control( 'google_fonts_headings',
-		array(
-			'label'       => 'Headings font',
-			'description' => '',
-			'section'     => 'theme_settings',
-			'type'        => 'select',
-			'choices'     => $font_choices,
-		) );
-
-	// content
-	$wp_customize->add_setting( 'google_fonts_content',
-		array(
-			'default' => 0,
-		) );
-
-	$wp_customize->add_control( 'google_fonts_content',
-		array(
-			'label'       => 'Content font',
-			'description' => '',
-			'section'     => 'theme_settings',
-			'type'        => 'select',
-			'choices'     => $font_choices,
-		) );
 }
 add_action( 'customize_register', 'awesomesauce_customize_register' );
