@@ -54,7 +54,7 @@ function awesomesauce_wp_head(){
 	{
 		?>
 		<style>
-			h1,h2,h3,h4,h5,h6 {
+			h1,h2,h3,h4,h5,h6,nav {
 				font-family: '<?php echo $headings; ?>', sans-serif;
 			}
 		</style>
