@@ -13,7 +13,7 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info <?php echo get_theme_mod('container_class'); ?>">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'awesomesauce' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'awesomesauce' ), 'WordPress' ); ?></a>
+			<a href="<?php echo esc_url( esc_html__( 'https://wordpress.org/', 'awesomesauce' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'awesomesauce' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
 			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'awesomesauce' ), 'awesomesauce', '<a href="http://www.daggerhart.com" rel="designer">Jonathan Daggerhart</a>' ); ?>
 		</div><!-- .site-info -->

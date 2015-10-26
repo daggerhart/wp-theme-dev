@@ -13,7 +13,7 @@
 function awesomesauce_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'theme_settings',
 		array(
-			'title'    => 'Theme Settings',
+			'title'    => esc_html__( 'Theme Settings', 'awesomesauce' ),
 			'priority' => 35,
 		) );
 
@@ -27,7 +27,7 @@ function awesomesauce_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( 'container_class',
 		array(
-			'label'   => 'Container',
+			'label'   => esc_html__( 'Container', 'awesomesauce' ),
 			'section' => 'theme_settings',
 			'type'    => 'select',
 			'choices' => array(
@@ -46,7 +46,7 @@ function awesomesauce_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( 'navbar_class',
 		array(
-			'label'   => 'Navbar Style',
+			'label'   => esc_html__( 'Navbar Style', 'awesomesauce' ),
 			'section' => 'theme_settings',
 			'type'    => 'select',
 			'choices' => array(
@@ -65,8 +65,8 @@ function awesomesauce_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( 'content_width',
 		array(
-			'label'       => 'Content widget',
-			'description' => 'Pixel width limit for embedded content.',
+			'label'       => esc_html__( 'Content widget', 'awesomesauce' ),
+			'description' => esc_html__( 'Pixel width limit for embedded content.', 'awesomesauce' ),
 			'section'     => 'theme_settings',
 			'type'        => 'number',
 		) );
@@ -81,8 +81,8 @@ function awesomesauce_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( 'excerpt_length',
 		array(
-			'label'       => 'Excerpt Length',
-			'description' => 'Word limit for excerpts.',
+			'label'       => esc_html__( 'Excerpt Length', 'awesomesauce' ),
+			'description' => esc_html__( 'Word limit for excerpts.', 'awesomesauce' ),
 			'section'     => 'theme_settings',
 			'type'        => 'number',
 		) );
@@ -97,8 +97,8 @@ function awesomesauce_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( 'excerpt_more',
 		array(
-			'label'       => 'Excerpt more',
-			'description' => 'Content appended to post excerpts.',
+			'label'       => esc_html__( 'Excerpt more', 'awesomesauce' ),
+			'description' => esc_html__( 'Content appended to post excerpts.', 'awesomesauce' ),
 			'section'     => 'theme_settings',
 			'type'        => 'text',
 		) );
@@ -113,8 +113,8 @@ function awesomesauce_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( 'excerpt_more_link',
 		array(
-			'label'       => 'Link "Excerpt more"',
-			'description' => 'Convert the "Excerpt more" content into a link to the post.',
+			'label'       => esc_html__( 'Link "Excerpt more"', 'awesomesauce' ),
+			'description' => esc_html__( 'Convert the "Excerpt more" content into a link to the post.', 'awesomesauce' ),
 			'section'     => 'theme_settings',
 			'type'        => 'checkbox',
 		) );

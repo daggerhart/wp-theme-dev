@@ -31,7 +31,11 @@ function awesomesauce_google_fonts_customize_register( $wp_customize ) {
 	/*
 	 * Google Fonts
 	 */
-	$font_choices = array( 0 => '- Disabled -' );
+	$font_choices = array(
+		0 => esc_html__( '- Disabled -', 'awesomesauce' )
+	);
+
+	// loop through list of available fonts
 	foreach ( awesomesauce_google_fonts_options() as $option ){
 		$font_choices[ $option ] = $option;
 	}
@@ -44,8 +48,8 @@ function awesomesauce_google_fonts_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( 'google_fonts_headings',
 		array(
-			'label'       => 'Headings font',
-			'description' => '',
+			'label'       => esc_html__( 'Headings font', 'awesomesauce' ),
+			'description' => esc_html__( '', 'awesomesauce' ),
 			'section'     => 'theme_settings',
 			'type'        => 'select',
 			'choices'     => $font_choices,
@@ -59,8 +63,8 @@ function awesomesauce_google_fonts_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( 'google_fonts_content',
 		array(
-			'label'       => 'Content font',
-			'description' => '',
+			'label'       => esc_html__( 'Content font', 'awesomesauce' ),
+			'description' => esc_html__( '', 'awesomesauce' ),
 			'section'     => 'theme_settings',
 			'type'        => 'select',
 			'choices'     => $font_choices,

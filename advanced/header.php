@@ -26,8 +26,8 @@
 		<div class="<?php echo get_theme_mod('container_class'); ?>">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#primary-navigation" aria-expanded="false">
-					<span class="sr-only">Toggle navigation</span>
-					<small class="text-muted">Menu</small>
+					<span class="sr-only"><?php esc_html_e( 'Toggle navigation', 'awesomesauce' ); ?></span>
+					<small class="text-muted"><?php esc_html_e( 'Menu', 'awesomesauce' ); ?></small>
 				</button>
 				<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 			</div>

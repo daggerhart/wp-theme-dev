@@ -10,31 +10,34 @@ $author_avatar = get_avatar( $author_id, 96, '', 'author avatar', array( 'class'
 $author_url = get_the_author_meta( 'url' );
 ?>
 <div class="about-the-author">
-	<h4 class="author-title">About the Author</h4>
+	<h4 class="author-title"><?php esc_html_e( 'About the Author', 'awesomesauce' ); ?></h4>
 
 	<div class="row">
 		<div class="col-sm-3">
-			<a class="author-avatar" href="<?php echo $author_posts_url; ?>">
+			<a class="author-avatar" href="<?php echo esc_url( $author_posts_url ); ?>">
 				<?php echo $author_avatar; ?>
 			</a>
 		</div>
 
 		<div class="col-sm-9">
 			<h4><?php the_author(); ?></h4>
+
 			<?php if ( $author_description ) : ?>
 				<p><?php echo $author_description; ?></p>
 			<?php endif; ?>
+
 			<div class="list-group">
-				<a href="<?php echo $author_posts_url; ?>" class="list-group-item">
-					Other posts by <?php the_author(); ?> <span class="badge"><?php the_author_posts(); ?></span>
+				<a href="<?php echo esc_url( $author_posts_url ); ?>" class="list-group-item">
+					<?php esc_html_e( 'Other posts by ', 'awesomesauce' ); ?><?php the_author(); ?>
+					<span class="badge"><?php the_author_posts(); ?></span>
 				</a>
 
 				<?php if ( $author_url ) : ?>
-					<a href="<?php echo $author_url; ?>" class="list-group-item" target="_blank">
-						Visit <?php the_author(); ?>'s website
+					<a href="<?php echo esc_url( $author_url ); ?>" class="list-group-item" target="_blank">
+						<?php printf( esc_html__( "Visit %s's website", 'awesomesauce' ), get_the_author() ); ?>
 					</a>
 				<?php endif; ?>
-			</div>
-		</div>
-	</div>
-</div>
+			</div><!-- /.list-group -->
+		</div><!-- /.column -->
+	</div><!-- /.row -->
+</div><!-- /.about-the-author -->

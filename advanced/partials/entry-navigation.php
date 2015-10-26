@@ -10,7 +10,7 @@ if ( $previous || $next )
 {
 	?>
 	<nav>
-		<h2 class="screen-reader-text">Post navigation</h2>
+		<h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'awesomesauce' ); ?></h2>
 		<ul class="pager">
 			<?php echo $previous.$next; ?>
 		</ul>

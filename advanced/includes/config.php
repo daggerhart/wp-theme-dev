@@ -7,7 +7,14 @@
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function awesomesauce_setup() {
+function awesomesauce_setup() {	/*
+	 * Make theme available for translation.
+	 * Translations can be filed in the /languages/ directory.
+	 * If you're building a theme based on awesomesauce, use a find and replace
+	 * to change 'awesomesauce' to the name of your theme in all the template files.
+	 */
+	load_theme_textdomain( 'awesomesauce', get_template_directory() . '/languages' );
+
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 

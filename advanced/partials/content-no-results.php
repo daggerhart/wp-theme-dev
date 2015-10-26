@@ -9,22 +9,24 @@
 
 <section class="no-results not-found">
 	<header class="page-header">
-		<h1 class="page-title">Nothing Found</h1>
+		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'awesomesauce' ); ?></h1>
 	</header><!-- .page-header -->
 
 	<div class="page-content">
 		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
-			<p>Ready to publish your first post? <a href="<?php echo esc_url( admin_url( 'post-new.php' ) ) ?>">Get started here</a></p>
+			<p><?php esc_html_e( 'Ready to publish your first post?', 'awesomesauce' ); ?>
+				<a href="<?php echo esc_url( admin_url( 'post-new.php' ) ) ?>"><?php esc_html_e( 'Get started here', 'awesomesauce' ); ?></a>
+			</p>
 
 		<?php elseif ( is_search() ) : ?>
 
-			<p>Sorry, but nothing matched your search terms. Please try again with some different keywords.</p>
+			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'awesomesauce' ); ?></p>
 			<?php get_search_form(); ?>
 
 		<?php else : ?>
 
-			<p>It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.</p>
+			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'awesomesauce' ); ?></p>
 			<?php get_search_form(); ?>
 
 		<?php endif; ?>

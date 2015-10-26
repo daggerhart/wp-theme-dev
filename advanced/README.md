@@ -11,6 +11,7 @@ This theme will always be a work in progress, as it is where I will place future
 * Bootstrap
 * SASS
 * Granular templates
+* Translation ready
 * Customizer theme settings
     * Content Width: `content_width` - Dynamic content width (oembeds, etc) 
     * Excerpt Length: `excerpt_length` - How many words should appear in excerpts
@@ -127,4 +128,3 @@ sass -scss --watch style.scss:style.css
     * `custom-background` Background color
     * `custom-header` Header image
 * Accessibility
-* Internationalization
