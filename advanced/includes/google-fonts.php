@@ -13,9 +13,9 @@ function awesomesauce_google_fonts_options(){
 		'Neuton',
 		'Oswald',
 		'Quattrocento',
-		'Playfair+Display',
-		'Open+Sans',
-		'Roboto+Slab',
+		'Playfair Display',
+		'Open Sans',
+		'Roboto Slab',
 		'Roboto',
 	);
 
@@ -33,7 +33,7 @@ function awesomesauce_google_fonts_customize_register( $wp_customize ) {
 	 */
 	$font_choices = array( 0 => '- Disabled -' );
 	foreach ( awesomesauce_google_fonts_options() as $option ){
-		$font_choices[ $option ] = urldecode( $option );
+		$font_choices[ $option ] = $option;
 	}
 
 	// headings
@@ -113,11 +113,11 @@ function _awesomesauce_google_fonts_url(){
 	$fonts = array();
 
 	if ( $headings ) {
-		$fonts[] = $headings;
+		$fonts[] = urlencode( $headings );
 	}
 
 	if ( $content ) {
-		$fonts[] = $content;
+		$fonts[] = urlencode( $content );
 	}
 
 	$url = '//fonts.googleapis.com/css?family=' . implode( '|', $fonts );
