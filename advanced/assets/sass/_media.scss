@@ -21,6 +21,7 @@ object {
 	border: 1px solid #bbb;
 }
 .fancy-large-overlay {
+	display: block;
 	height: 280px;
 	max-height: 280px;
 	overflow: hidden;
