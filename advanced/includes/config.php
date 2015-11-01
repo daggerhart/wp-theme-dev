@@ -119,3 +119,14 @@ function awesomesauce_excerpt_more( $more ){
 	return "<span class='excerpt-more'>{$more}</span>";
 }
 add_filter( 'excerpt_more', 'awesomesauce_excerpt_more' );
+
+/**
+ * Sweet Widget Templates - Override the widget templates folder
+ *
+ * @param $folder
+ * @return string
+ */
+function awesomesauce_widget_templates_folder( $folder ){
+	return 'widget-templates';
+}
+add_filter( 'sweet_widgets_templates-folder', 'awesomesauce_widget_templates_folder' );
