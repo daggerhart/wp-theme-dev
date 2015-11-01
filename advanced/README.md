@@ -20,7 +20,6 @@ This theme will always be a work in progress, as it is where I will place future
     * Bootstrap Navbar: Default or inverse navbar style.
     * Google Fonts: Separate choices for headings and content.
 * Page Templates
-    * `page-list-category.php` - Custom WP_Query using "post_category_slug" post_meta to pull posts in the given category slug.
     
 
 ### Folder Structure 
@@ -33,6 +32,7 @@ This theme will always be a work in progress, as it is where I will place future
     * **vendor** - Location for 3rd party PHP libraries.
 * **page-templates** - Location of templates that may be used by the Page post type.
 * **partials** - Templates that represent the interior content of a page/post.
+* **widget-templates** - Template location for widgets.
 
 ### Theme Files
 
@@ -45,7 +45,7 @@ File | Description
 
 ### Template Hierarchy Files
 
-These templates define the theme layout for different types of pages throughout the site. 
+These templates define the theme layout for different types of pages throughout the site. **Template Hierarchy files must be located in the root of your theme.** 
 
 File | Description
 ---|---
@@ -93,15 +93,37 @@ File | Description
 
 ### Content Template Patterns
 
-These patterns can be used to create more-specific templates.
+These patterns can be used to create more-specific content templates.
 
-File | Description
+Pattern | Description
 ---|---
 `partials/content-{post_type}.php` | Like `content.php`, but this template handles content for a custom post_type. Example: `partials/content-gallery_item.php`
 `partials/content-post-{post_format}.php` | Like `content-post.php`, but this template is for a specific post_format. Example: `partials/content-post-video.php`
 `partials/entry-footer-{post_type}.php` | Like `entry-footer.php`, but this template is for a specific post_type. Example: `partials/entry-footer-gallery_item.php`
 `partials/entry-meta-{post_type}.php` | Like `entry-meta.php`, but this template is for a specific post_type. Example: `entry-meta-gallery_item.php`
 
+### Widget Templates
+
+Templating provided by [Sweet Widgets Templates](https://github.com/daggerhart/sweet-widgets/tree/master/modules/widget-templates).
+
+
+#### Widget Template Patterns
+
+These patterns can be used to create more-specific widget templates.
+
+Pattern | Description
+---|---
+`widget-templates/{sidebar-id}--{widget-id}.php` | Specific widget in specific sidebar.
+`widget-templates/{sidebar-id}--default.php` | Any widget in a specific sidebar.
+`widget-templates/{widget-id}.php` | Specific widget in any sidebar.
+`widget-templates/widget--default.php` | Any widget in any sidebar.
+
+
+#### Widget Template Files
+
+File | Description
+---|---
+`widget-templates/widget--default.php` | The default HTML for widgets in this theme.
 
 ### Other Files
 
