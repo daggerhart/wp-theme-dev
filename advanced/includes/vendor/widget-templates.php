@@ -7,13 +7,14 @@
  *      - sweet_widgets_templates-folder
  *      - sweet_widgets_templates-replacements
  *      - sweet_widgets_templates-suggestions
+ *      - sweet_widgets_templates-get_widget_data
  */
 if ( !defined('ABSPATH') ) die();
 
 if ( ! class_exists('Sweet_Widgets_Templates') ) :
 	class Sweet_Widgets_Templates {
 
-		public $version = '0.0.1';
+		public $version = '1.0.0';
 
 		// subdirectory in theme where widget templates are kept
 		public $folder = 'widgets';
@@ -68,8 +69,7 @@ if ( ! class_exists('Sweet_Widgets_Templates') ) :
 					<?php printf( __( "Widget ID: %s" ), $widget->id ); ?>
 				</p>
 			</div>
-			<?php
-			//
+		<?php
 		}
 
 		/**
@@ -113,18 +113,21 @@ if ( ! class_exists('Sweet_Widgets_Templates') ) :
 			$template = locate_template( $suggestions );
 
 			if ( $template ){
-				// We have a custom template, now we need to setup some data for
-				// the template to use, then load it.
-				$this->setup_widget_template_data( $instance, $widget, $args );
+				// We have a custom template, now we need to execute the widget
+				// and extract its contents as data
+				$data = $this->get_widget_data( $instance, $widget, $args );
 
-				// execute the widget
+				// add the data temporarily to the query for extraction into the template
+				$this->set_query_vars( $data );
+
+				// execute the template
 				load_template( $template, false );
+
+				// clean up any previous widget data stored in the query_vars
+				$this->unset_query_vars( array_keys( $data ) );
 
 				// set instance to false to short circuit the normal process
 				$instance = false;
-
-				// clean up any previous widget data stored in the query_vars
-				$this->reset_query_vars();
 			}
 
 			return $instance;
@@ -144,7 +147,7 @@ if ( ! class_exists('Sweet_Widgets_Templates') ) :
 
 			// if the widget has specified a template, look for it first.
 			if ( isset( $instance['sweet_widgets_template'] ) && ! empty( $instance['sweet_widgets_template'] ) ) {
-				$suggestions[] = esc_attr( $instance['sweet_widgets_template'] );
+				$suggestions[] = esc_attr( rtrim( $instance['sweet_widgets_template'], '.php' ) );
 			}
 
 			$replacements = array(
@@ -178,8 +181,10 @@ if ( ! class_exists('Sweet_Widgets_Templates') ) :
 		 * @param $instance
 		 * @param $widget
 		 * @param $args
+		 *
+		 * @return array
 		 */
-		function setup_widget_template_data( $instance, $widget, $args ){
+		function get_widget_data( $instance, $widget, $args ){
 			// alter the parameters
 			$temp_args = array_replace( $args, array(
 				'before_widget' => '',
@@ -191,12 +196,13 @@ if ( ! class_exists('Sweet_Widgets_Templates') ) :
 			// execute the widget and capture its output into separate 'title'
 			// and 'content' data
 			ob_start();
-				$this->override_widget_display( $instance, $widget, $temp_args );
+			$this->override_widget_display( $instance, $widget, $temp_args );
 			$document = ob_get_clean();
 			$document = explode( '<!--sweet-widget-templates-break-->', $document );
 
 			// default values to null
-			$widget_title = $widget_content = null;
+			$widget_title = null;
+			$widget_content = null;
 
 			if ( count( $document ) === 1 ){
 				// there is only content, no title
@@ -207,28 +213,39 @@ if ( ! class_exists('Sweet_Widgets_Templates') ) :
 				$widget_content = $document[1];
 			}
 
-			// add our data to the query vars for later extraction into scope of loaded template
-			set_query_var( 'widget_title', $widget_title );
-			set_query_var( 'widget_content', $widget_content );
-			set_query_var( 'widget_instance', $instance );
-			set_query_var( 'widget_object', $widget );
-			set_query_var( 'widget_args', $args );
-			set_query_var( 'widget_id', $widget->id );
-			set_query_var( 'widget_classname', $widget->widget_options['classname'] );
+			$data = array(
+				'title' => $widget_title,
+				'content' => $widget_content,
+				'instance' => $instance,
+				'object' => $widget,
+				'args' => $args,
+				'id' => $widget->id,
+				'classname' => $widget->widget_options['classname'],
+			);
+
+			return apply_filters( 'sweet_widgets_templates-get_widget_data', $data, $instance, $widget, $args );
+		}
+
+		/**
+		 * Util: Add our data to the query vars for later extraction into scope of loaded template
+		 *
+		 * @param $data - Associative array of widget data
+		 */
+		function set_query_vars( $data ){
+			foreach( $data as $key => $value ){
+				set_query_var( 'widget_' . $key, $value );
+			}
 		}
 
 		/**
 		 * Util: Reset the query vars this plugin uses so they don't leak
+		 *
+		 * @param $keys - array
 		 */
-		function reset_query_vars(){
-			// add our data to the query vars for later extraction into scope of loaded template
-			set_query_var( 'widget_title', null );
-			set_query_var( 'widget_content', null );
-			set_query_var( 'widget_instance', null );
-			set_query_var( 'widget_object', null );
-			set_query_var( 'widget_args', null );
-			set_query_var( 'widget_id', null );
-			set_query_var( 'widget_classname', null );
+		function unset_query_vars( $keys ){
+			foreach( $keys as $key ){
+				set_query_var( 'widget_'. $key, null );
+			}
 		}
 
 		/**
