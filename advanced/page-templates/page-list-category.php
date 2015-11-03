@@ -6,12 +6,9 @@
  * admin dashboard.
  *
  * This template expects a meta key named "page_category_slug" with the value of
- * a category term slug.
+ * a category term slug. See: partials/query-list-category.php
  *
  * @link https://developer.wordpress.org/themes/template-files-section/page-template-files/page-templates/
- *
- * WP_Query() class
- * @link https://codex.wordpress.org/Class_Reference/WP_Query
  */
 
 get_header(); ?>
@@ -28,47 +25,8 @@ get_header(); ?>
 				?>
 
 				<?php
-					/*
-					 * Execute the custom query.
-					 *
-					 * - Make sure we have a usable category as post_meta
-					 * - Create a new custom WP_Query()
-					 * - Loop through the custom query and include the template
-					 *   for each item.
-					 */
-
-					// our page meta data we expect
-					$term_slug = get_post_meta( get_the_ID(), 'page_category_slug', TRUE );
-					$term = get_category_by_slug( $term_slug );
-
-					// verify that we have a usable category
-					if ( $term ){
-
-						// create a new custom query
-						$custom_query = new WP_Query( array(
-							'tax_query' => array(
-								'post_category_slug' => array(
-									'taxonomy' => 'category',
-									'field'    => 'slug',
-									'terms'    => $term_slug,
-								),
-							),
-						) );
-
-						// loop through the found items
-						while( $custom_query->have_posts() ) {
-							$custom_query->the_post();
-
-							// include a single item's template
-							get_template_part( 'partials/content', get_post_type() );
-						}
-						// return to the original page being viewed
-						wp_reset_postdata();
-					}
-
-					/*
-					 * End of custom query
-					 */
+					// include our custom query
+					get_template_part( 'queries/query-list-category' );
 				?>
 
 				<?php
