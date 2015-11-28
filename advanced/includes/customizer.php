@@ -27,7 +27,7 @@ function awesomesauce_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( 'content_width',
 		array(
-			'label'       => esc_html__( 'Content widget', 'awesomesauce' ),
+			'label'       => esc_html__( 'Content width', 'awesomesauce' ),
 			'description' => esc_html__( 'Pixel width limit for embedded content.', 'awesomesauce' ),
 			'section'     => 'theme_settings',
 			'type'        => 'number',
