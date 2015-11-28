@@ -8,7 +8,7 @@
 get_header(); ?>
 
 <div class="row">
-	<div id="primary" class="content-area col-sm-8">
+	<div id="primary" class="content-area col-1">
 		<main id="main" class="site-main" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
@@ -36,7 +36,7 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-	<div id="secondary" class="widget-area col-sm-4" role="complementary">
+	<div id="secondary" class="widget-area col-2" role="complementary">
 		<?php get_sidebar(); ?>
 	</div><!-- #secondary -->
 </div>

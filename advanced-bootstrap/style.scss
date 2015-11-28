@@ -1,0 +1,53 @@
+/*!
+Theme Name: Awesomesauce - Advanced Bootstrap
+Theme URI: https://github.com/daggerhart/wp-theme-dev
+Author: Jonathan Daggerhart
+Author URI: http://www.daggerhart.com
+Description: Created from Awesomesauce - Bootstrap SASS, this theme incorporates many more advanced WordPress features and tricks to make a more professional theme.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: awesomesauce
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Awesomesauce - Advanced is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+*/
+
+/*--------------------------------------------------------------
+# Variables and Mixins
+--------------------------------------------------------------*/
+@import "assets/sass/variables";
+@import "assets/sass/mixins/mixins-master";
+
+/*--------------------------------------------------------------
+# Bootstrap
+--------------------------------------------------------------*/
+@import "assets/sass/bootstrap";
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+@import "assets/sass/typography";
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+@import "assets/sass/forms";
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+@import "assets/sass/navigation";
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+@import "assets/sass/site";
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+@import "assets/sass/media";

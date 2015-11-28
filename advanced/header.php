@@ -22,29 +22,20 @@
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'awesomesauce' ); ?></a>
 
-	<nav class="navbar <?php echo get_theme_mod('navbar_class'); ?>">
-		<div class="<?php echo get_theme_mod('container_class'); ?>">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#primary-navigation" aria-expanded="false">
-					<span class="sr-only"><?php esc_html_e( 'Toggle navigation', 'awesomesauce' ); ?></span>
-					<small class="text-muted"><?php esc_html_e( 'Menu', 'awesomesauce' ); ?></small>
-				</button>
-				<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-			</div>
-			<?php
-			wp_nav_menu( array(
-				'menu'              => 'primary',
-				'theme_location'    => 'primary',
-				'depth'             => 2,
-				'container'         => 'div',
-				'container_class'   => 'collapse navbar-collapse',
-				'container_id'      => 'primary-navigation',
-				'menu_class'        => 'nav navbar-nav',
-				'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-				'walker'            => new wp_bootstrap_navwalker()
-			) );
-			?>
-		</div><!-- /container -->
-	</nav>
+	<header id="masthead" class="site-header" role="banner">
+		<div class="site-branding">
+			<?php if ( is_front_page() && is_home() ) : ?>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<?php else : ?>
+				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+			<?php endif; ?>
+			<p class="site-description"><?php bloginfo( 'description' ); ?></p>
+		</div><!-- .site-branding -->
 
-	<div id="content" class="site-content <?php echo get_theme_mod('container_class'); ?>">
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'awesomesauce' ); ?></button>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+		</nav><!-- #site-navigation -->
+	</header><!-- #masthead -->
+
+	<div id="content" class="site-content">

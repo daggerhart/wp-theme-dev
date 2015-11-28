@@ -8,7 +8,6 @@ This theme will always be a work in progress, as it is where I will place future
 
 ##### Features
 
-* Bootstrap
 * SASS
 * Granular templates
 * Translation ready
@@ -16,8 +15,6 @@ This theme will always be a work in progress, as it is where I will place future
     * Content Width: `content_width` - Dynamic content width (oembeds, etc) 
     * Excerpt Length: `excerpt_length` - How many words should appear in excerpts
     * Excerpt More: `excerpt_more` - Modify the html appended to excerpts.
-    * Bootstrap Container: Fluid or fixed width content.
-    * Bootstrap Navbar: Default or inverse navbar style.
     * Google Fonts: Separate choices for headings and content.
 * Page Templates
     

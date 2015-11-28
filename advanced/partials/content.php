@@ -22,7 +22,7 @@
 		</header><!-- .entry-header -->
 
 		<?php if ( has_post_thumbnail() ): ?>
-			<?php the_post_thumbnail( 'medium', array( 'class' => 'img-responsive' ) ); ?>
+			<?php the_post_thumbnail( 'medium', array( 'class' => 'featured-image' ) ); ?>
 		<?php endif; ?>
 
 		<div class="entry-content">
@@ -48,7 +48,7 @@
 		</header><!-- .entry-header -->
 
 		<?php if ( has_post_thumbnail() ): ?>
-			<?php the_post_thumbnail( 'thumbnail', array( 'class' => 'img-responsive' ) ); ?>
+			<?php the_post_thumbnail( 'thumbnail', array( 'class' => 'featured-image' ) ); ?>
 		<?php endif; ?>
 
 		<div class="entry-content">

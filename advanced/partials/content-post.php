@@ -44,7 +44,7 @@
 		</header><!-- .entry-header -->
 
 		<?php if ( has_post_thumbnail() ): ?>
-			<span class="post-thumbnail"><?php the_post_thumbnail( 'thumbnail', array( 'class' => 'img-responsive' ) ); ?></span>
+			<span class="post-thumbnail"><?php the_post_thumbnail( 'thumbnail', array( 'class' => 'featured-image' ) ); ?></span>
 		<?php endif; ?>
 
 		<div class="entry-content">

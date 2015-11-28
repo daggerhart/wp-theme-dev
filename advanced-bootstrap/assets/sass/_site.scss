@@ -1,0 +1,188 @@
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+html,body { background: $html-bg; }
+table {
+	@extend .table;
+}
+/*--------------------------------------------------------------
+## Layout
+--------------------------------------------------------------*/
+.navbar {
+	margin-bottom: 0;
+}
+.site-content {
+	padding: 0 40px;
+	background: $body-bg;
+}
+#secondary {
+	padding-top: 15px;
+}
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0 0 1.5em;
+}
+
+.byline,
+.updated:not(.published) {
+	display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+	font-size: 20px;
+	line-height: 32px;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+.cat-links, .tag-links {
+	display: inline-block;
+	font-size: 18px;
+	font-weight: normal;
+	line-height: 28px;
+}
+.inline-category,
+.inline-tag {
+	@extend .label;
+
+	a {
+		color: #fff;
+	}
+}
+.inline-category { @extend .label-primary; }
+.inline-tag { @extend .label-warning; }
+
+nav.entry-pager {
+	text-align: center;
+
+	li > span {
+		color: $gray;
+
+		// .pagination .active
+		z-index: 2;
+		color: $body-bg;
+		cursor: default;
+		background-color: $brand-primary;
+		border-color: $brand-primary;
+	}
+}
+.about-the-author {
+	border-top: 1px solid $gray-lighter;
+	border-bottom: 1px solid $gray-lighter;
+	margin: 30px 0;
+	padding: 0 0 30px;
+
+	.author-title {
+		margin-bottom: 30px;
+	}
+}
+/*--------------------------------------------------------------
+## Asides
+--------------------------------------------------------------*/
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title {
+	display: none;
+}
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+## Widgets
+--------------------------------------------------------------*/
+.widget {
+	margin: 0 0 1.5em;
+
+	/* Make sure select elements fit in widgets. */
+	select {
+		max-width: 100%;
+	}
+}
+
+/* Search widget. */
+.widget_search .search-submit {
+	display: none;
+}
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+
+	&:focus {
+		background-color: $screen-reader-bg;
+		border-radius: 3px;
+		box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+		clip: auto !important;
+		color: $screen-reader-text-color;
+		display: block;
+		@include font-size(0.875);
+		font-weight: bold;
+		height: auto;
+		left: 5px;
+		line-height: normal;
+		padding: 15px 23px 14px;
+		text-decoration: none;
+		top: 5px;
+		width: auto;
+		z-index: 100000; /* Above WP toolbar. */
+	}
+}
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+	@include clearfix;
+}
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+	@include clearfix-after;
+}

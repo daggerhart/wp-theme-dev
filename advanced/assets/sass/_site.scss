@@ -3,7 +3,6 @@
 --------------------------------------------------------------*/
 html,body { background: $html-bg; }
 table {
-	@extend .table;
 }
 /*--------------------------------------------------------------
 ## Layout
@@ -60,14 +59,12 @@ table {
 }
 .inline-category,
 .inline-tag {
-	@extend .label;
-
 	a {
 		color: #fff;
 	}
 }
-.inline-category { @extend .label-primary; }
-.inline-tag { @extend .label-warning; }
+.inline-category {}
+.inline-tag {}
 
 nav.entry-pager {
 	text-align: center;
@@ -79,8 +76,8 @@ nav.entry-pager {
 		z-index: 2;
 		color: $body-bg;
 		cursor: default;
-		background-color: $brand-primary;
-		border-color: $brand-primary;
+		background-color: $link-color;
+		border-color: $link-color;
 	}
 }
 .about-the-author {

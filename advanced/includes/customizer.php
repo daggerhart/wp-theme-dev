@@ -18,44 +18,6 @@ function awesomesauce_customize_register( $wp_customize ) {
 		) );
 
 	/*
-	 * Bootstrap container class
-	 */
-	$wp_customize->add_setting( 'container_class',
-		array(
-			'default' => 'container',
-		) );
-
-	$wp_customize->add_control( 'container_class',
-		array(
-			'label'   => esc_html__( 'Container', 'awesomesauce' ),
-			'section' => 'theme_settings',
-			'type'    => 'select',
-			'choices' => array(
-				'container'       => 'Fixed',
-				'container-fluid' => 'Fluid',
-			)
-		) );
-
-	/*
-	 * Bootstrap navbar class
-	 */
-	$wp_customize->add_setting( 'navbar_class',
-		array(
-			'default' => 'navbar-default',
-		) );
-
-	$wp_customize->add_control( 'navbar_class',
-		array(
-			'label'   => esc_html__( 'Navbar Style', 'awesomesauce' ),
-			'section' => 'theme_settings',
-			'type'    => 'select',
-			'choices' => array(
-				'navbar-default' => 'Default',
-				'navbar-inverse' => 'Inverse',
-			)
-		) );
-
-	/*
 	 * Content width
 	 */
 	$wp_customize->add_setting( 'content_width',

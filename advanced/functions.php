@@ -38,13 +38,6 @@ require get_template_directory() . '/includes/sidebars.php';
 require get_template_directory() . '/includes/utilities.php';
 
 /**
- * Bootstrap Navwalker helps convert normal theme menus into Bootstrap Navbars
- *
- * https://github.com/twittem/wp-bootstrap-navwalker
- */
-require get_template_directory() . '/includes/vendor/wp_bootstrap_navwalker.php';
-
-/**
  * Sweet Widget Templates
  *
  * https://github.com/daggerhart/sweet-widgets

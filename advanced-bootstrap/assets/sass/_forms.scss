@@ -1,0 +1,23 @@
+/*--------------------------------------------------------------
+# Buttons
+--------------------------------------------------------------*/
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	// apply bootstrap .btn class to all button-like elements by default
+	@extend .btn;
+}
+
+/*--------------------------------------------------------------
+# Fields
+--------------------------------------------------------------*/
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea {
+	// apply bootstrap's .form-control class to generic fields by default
+	@extend .form-control;
+}
